@@ -116,7 +116,7 @@ So our new total would be 256 - 2 = 254 useable addresses.
 
 ### Subnet Mask Chart
 
-| Subnet Mask       | CIDR | Binary                              | Network Bits | Host bits | Available addresses (Group size) - 2^(host bits) |
+| Subnet Mask       | CIDR | Binary                              | Network Bits | Host bits | Available addresses/Group size (`2^host bits`) |
 |-------------------|------|-------------------------------------|--------------|-----------|-----------------------------------|
 | 255.255.255.255   | /32  | 11111111 11111111 11111111 11111111 | 32           | 0         | 1                                 |
 | 255.255.255.254   | /31  | 11111111 11111111 11111111 11111110 | 31           | 1         | 2                                 |
