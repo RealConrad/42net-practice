@@ -45,27 +45,74 @@ A switch allows multiple devices to connect with one another in a local network 
 <div align="center">
   <img width="627" alt="image" src="https://github.com/RealConrad/42net-practice/assets/79513076/5a72997b-1788-4313-b0cc-2ff624347f43">
 </div>
+The router connects multiple networks. Unlike the switch, the router has an interface for each network it connects to. Make sure the IP's do not overlap when assigning IP's.
+
 
 ### Converting IP Addresses to Binary and Decimal
-To convert an IP address from decimal to binary:
-1. Start with the decimal IP address (e.g., 192.168.1.21).
-2. Convert each decimal octet to binary by writing down the binary equivalent using the 8-bit binary format where each bit represents a power of 2 from 2^7 to 2^0 (128 to 1).
+To convert an IP address we will be using the following cheat table:
    | 128 | 64  | 32  | 16  | 8   |  4  | 2   | 1   |
    |-----|-----|-----|-----|-----|-----|-----|-----|
    | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
 
-#### From Decimal to Binary
+#### **From Decimal to Binary:**
 Example of IP address in bits: `11000000.10101000.00000001.00010101`. \
-Place the 8 bits on our table and check the following: When theres a `1`, add all the numbers:
+Place the 8 bits on our table and check the following: When theres a `1`, add all the numbers.
+
+So we take the first octet (`11000000`) and place it on our table:
 | 1   | 1   | 0   | 0   | 0   | 0   | 0   | 0   |
 |-----|-----|-----|-----|-----|-----|-----|-----|
 | 128 | 64  | 32  | 16  | 8   |  4  | 2   | 1   |
 
 The above gives us, `128 + 64 = 192`. \
-When we do this for the rest of the octets, you get: `192.168.1.21`.
+When we do this for the rest of the octets, you get: 
+```
+192.168.1.21
+```
 
-#### From binary to decimal:
+#### **From binary to decimal:**
+IP Address: `172.16.34.3` \
+Take the individual octests and ask: Can we subtract the current octet from the table?
+  - _Yes_: Place 1 and use the result from the subtraction and move on.
+  - _No_: Place 0 and move on to the next one.
 
+Taking the first octet, `172` and place it on our table:
+| 172 | 44  | 44  | 12  | 12  | 4   | 0   | 0   |
+|-----|-----|-----|-----|-----|-----|-----|-----|
+| 128 | 64  | 32  | 16  | 8   |  4  | 2   | 1   |
+| 1   | 0   | 1   | 0   | 1   |  1  | 0   | 0   |
+
+From the above we get our first binary octet: 10101100. \
+Again, we first check, can we subtract 128 from 172 (basically is `172 > 128`)? Yes, `172-128 = 44`. So then we place a `1` and move on to the next one, but now with the result (`44`).
+
+If you do this for all of them you get the following: 
+```
+10101100.00010000.00100010.00000011
+```
+
+#### **What does the binary tell us?**
+We can calculate the number of network/host bits when converting a subnet mask to binary (see this [chart](#subnet-mask-chart) for all the different combinations).
+  - 1 = Network bits
+  - 0 = Host bits
+
+Example of sub net mask:
+- Decimal: 255.255.255.0
+- Binary: 11111111.11111111.11111111.00000000
+
+The number of 0's (in binary!) = number of hosts. So we can use the following to calculate the number of possible IP's in the the network:
+```
+2^(# of 0's) - 2
+```
+So given our example above, we can do:
+```
+2^8 = 256
+```
+This means we can have a total of 256 different IP addresses in the current network.
+
+**HOWEVER**: 2 IP's are reserved:
+-  The first IP = subnet address.
+-  The last IP = broadcast address.
+
+So our new total would be 256 - 2 = 254 useable addresses.
 
 ### Subnet Mask Chart
 
