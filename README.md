@@ -98,7 +98,7 @@ Example of sub net mask:
 - Decimal: 255.255.255.0
 - Binary: 11111111.11111111.11111111.00000000
 
-The number of 0's (in binary!) = number of hosts. So we can use the following to calculate the number of possible IP's in the the network:
+The number of 0's (*in binary!*) = number of hosts. So we can use the following to calculate the number of possible IP's in the the network:
 ```
 2^(# of 0's) - 2
 ```
