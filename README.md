@@ -98,7 +98,7 @@ Example of sub net mask:
 - Decimal: 255.255.255.0
 - Binary: 11111111.11111111.11111111.00000000
 
-The number of 0's (*in binary!*) = number of hosts. So we can use the following to calculate the number of possible IP's in the the network:
+The number of 0's *in binary* = number of hosts. So we can use the following to calculate the number of possible IP's in the the network:
 ```
 2^(# of 0's) - 2
 ```
@@ -116,7 +116,7 @@ So our new total would be 256 - 2 = 254 useable addresses.
 
 ### Subnet Mask Chart
 
-| Subnet Mask       | CIDR | Binary                              | Network Bits | Host bits | Available addresses (Group size) |
+| Subnet Mask       | CIDR | Binary                              | Network Bits | Host bits | Available addresses (Group size) - 2^(host bits) |
 |-------------------|------|-------------------------------------|--------------|-----------|-----------------------------------|
 | 255.255.255.255   | /32  | 11111111 11111111 11111111 11111111 | 32           | 0         | 1                                 |
 | 255.255.255.254   | /31  | 11111111 11111111 11111111 11111110 | 31           | 1         | 2                                 |
