@@ -11,22 +11,22 @@
 
 # Explanations:
 > NOTE: You do not need to know everything below to pass net practice. As long as you understand the basics of subnetting you would be good to go. I would recommend to learn the [Subnet Mask Chart](#subnet-mask-chart)
-### IP Address and Subnetting Guide
-#### Introduction
+### Introduction
 This guide explains the basics of IP addressing and subnetting, including how to convert IP addresses to binary, calculate network bits, host bits, and the number of available addresses in a subnet.
 
-#### What is an IP?
+### What is an IP?
 <div align="center">
   <img width="307" alt="image" src="https://github.com/RealConrad/42net-practice/assets/79513076/00ee28a4-6ed1-4c45-87c7-62195dbc6681">
 </div>
 
 An IP (Internet Protocol) address is a unique identifier assigned to each device connected to a computer network that uses the Internet Protocol for communication. It has two main purposes: network interface identification and location addressing. An IP address contains four octets (in IPv4), which can range from 0 to 255 (e.g., 192.168.1.1). This numerical label enables devices to locate and communicate with each other on a network. There is also IPv6, but that is beyond the scope of the project.
 
-#### What is a subnet mask?
+### What is a subnet mask?
 <div align="center">
   <img width="307" alt="image" src="https://github.com/RealConrad/42net-practice/assets/79513076/8254ba72-d41c-4e51-9ce5-e2d730b5c24d">
 </div>
-A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address. Subnet masks are used to designate which portion of an IP address is allocated to the network and which part is available for host use. This creates subnetworks within a larger network, which basically does the following: 
+A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address. Subnet masks are used to designate which portion of an IP address is allocated to the network and which part is available for host use. This creates subnetworks within a larger network, which basically does the following:
+
   - Routing efficiency
   - Security
   - Management of IP address allocations.
@@ -35,6 +35,16 @@ A subnet mask looks very similar to an IP address (e.g., 255.255.255.0).
 
 When the subnet mask is applied (via a bitwise AND operation) to an IP address, the network portion of the IP address is known. The remaining part, which corresponds to the host on that network, determines the number of hosts that can be assigned in the subnet. A common subnet mask is 255.255.255.0, which allows for 254 host addresses within a single network segment.
 
+### Switch
+<div align="center">
+  <img width="302" alt="image" src="https://github.com/RealConrad/42net-practice/assets/79513076/cdfe2af8-62e9-4d69-8a6d-2a7f4762e307">
+</div>
+A switch allows multiple devices to connect with one another in a local network (LAN). It cannot deliver packages outside of its own network.
+
+### Router
+<div align="center">
+  <img width="627" alt="image" src="https://github.com/RealConrad/42net-practice/assets/79513076/5a72997b-1788-4313-b0cc-2ff624347f43">
+</div>
 
 ### Converting IP Addresses to Binary and Decimal
 To convert an IP address from decimal to binary:
