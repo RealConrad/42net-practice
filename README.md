@@ -9,19 +9,44 @@
 
 <br />
 
-## Table of Contents
-- [Notes](#notes)
-- [License](#license)
-
-## Notes:
+# Explanations:
+> NOTE: You do not need to know everything below to pass net practice. As long as you understand the basics of subnetting you would be good to go. I would recommend to learn the [Subnet Mask Chart](#subnet-mask-chart)
 ### IP Address and Subnetting Guide
 #### Introduction
 This guide explains the basics of IP addressing and subnetting, including how to convert IP addresses to binary, calculate network bits, host bits, and the number of available addresses in a subnet.
 
-### Converting IP Addresses to Binary and Decimal
-#### From Decimal to Binary
-To convert an IP address from decimal to binary:
+#### What is an IP?
+An IP (Internet Protocol) address is a unique identifier assigned to each device connected to a computer network that uses the Internet Protocol for communication. It has two main purposes: network interface identification and location addressing. An IP address contains four octets (in IPv4), which can range from 0 to 255 (e.g., 192.168.1.1). This numerical label enables devices to locate and communicate with each other on a network. There is also IPv6, but that is beyond the scope of the project.
 
+#### What is a subnet mask?
+A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address. Subnet masks are used to designate which portion of an IP address is allocated to the network and which part is available for host use. This creates subnetworks within a larger network, which basically does the following: 
+  - Routing efficiency
+  - Security
+  - Management of IP address allocations.
+
+A subnet mask looks very similar to an IP address (e.g., 255.255.255.0).
+
+When the subnet mask is applied (via a bitwise AND operation) to an IP address, the network portion of the IP address is known. The remaining part, which corresponds to the host on that network, determines the number of hosts that can be assigned in the subnet. A common subnet mask is 255.255.255.0, which allows for 254 host addresses within a single network segment.
+
+### Converting IP Addresses to Binary and Decimal
+To convert an IP address from decimal to binary:
+1. Start with the decimal IP address (e.g., 192.168.1.21).
+2. Convert each decimal octet to binary by writing down the binary equivalent using the 8-bit binary format where each bit represents a power of 2 from 2^7 to 2^0 (128 to 1).
+   | 128 | 64  | 32  | 16  | 8   |  4  | 2   | 1   |
+   |-----|-----|-----|-----|-----|-----|-----|-----|
+   | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
+
+#### From Decimal to Binary
+Example of IP address in bits: `11000000.10101000.00000001.00010101`. \
+Place the 8 bits on our table and check the following: When theres a `1`, add all the numbers:
+| 1   | 1   | 0   | 0   | 0   | 0   | 0   | 0   |
+|-----|-----|-----|-----|-----|-----|-----|-----|
+| 128 | 64  | 32  | 16  | 8   |  4  | 2   | 1   |
+
+The above gives us, `128 + 64 = 192`. \
+When we do this for the rest of the octets, you get: `192.168.1.21`.
+
+#### From binary to decimal:
 
 
 ### Subnet Mask Chart
@@ -53,7 +78,3 @@ To convert an IP address from decimal to binary:
 | 255.192.0.0       | /10  | 11111111 11000000 00000000 00000000 | 10           | 22        | 4194304                           |
 | 255.128.0.0       | /9   | 11111111 10000000 00000000 00000000 | 9            | 23        | 8388608                           |
 | 255.0.0.0         | /8   | 11111111 00000000 00000000 00000000 | 8            | 24        | 16777216                          |
-
-
-## Liencse
-[MIT](https://choosealicense.com/licenses/mit/)
