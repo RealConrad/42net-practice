@@ -10,7 +10,7 @@
 <br />
 
 # Explanations:
-> NOTE: You do not need to know everything below to pass net practice. As long as you understand the basics of subnetting you would be good to go. I would recommend to learn the [Subnet Mask Chart](#subnet-mask-chart)
+> NOTE: You do not need to know everything below to pass net practice. As long as you understand the basics of subnetting you should be good to go. I would recommend to learn the [Subnet Mask Chart](#subnet-mask-chart)
 ### Introduction
 This guide explains the basics of IP addressing and subnetting, including how to convert IP addresses to binary, calculate network bits, host bits, and the number of available addresses in a subnet.
 
