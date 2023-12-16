@@ -69,6 +69,8 @@ When we do this for the rest of the octets, you get:
 192.168.1.21
 ```
 
+<br />
+
 #### **From binary to decimal:**
 IP Address: `172.16.34.3` \
 Take the individual octests and ask: Can we subtract the current octet from the table?
