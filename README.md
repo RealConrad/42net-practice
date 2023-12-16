@@ -114,7 +114,7 @@ This means we can have a total of 256 different IP addresses in the current netw
 -  The first IP = subnet address.
 -  The last IP = broadcast address.
 
-So our new total would be 256 - 2 = 254 useable addresses.
+So our new total would be 256 - 2 = 254 usable addresses.
 
 ### Subnet Mask Chart
 
